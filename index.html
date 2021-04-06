@@ -35,37 +35,39 @@
       <div class="main">
         <div class="searchBar">
           <form action="" method="POST">
-            <label for="">Search USA: </label>
-            <input type="text" placeholder="City of State" />
-            <button><i class="fa fa-search"></i></button>
+            <label for="" id="searchBarLabel">Search USA: </label>
+            <input type="text" placeholder="City of State" id="searchBar" />
+            <button id="submitBtn"><i class="fa fa-search"></i></button>
           </form>
         </div>
 
         <div class="currentWeather">
-          <h1>City Name</h1>
-          <h4>date</h4>
-          <h2>Temperature:</h2>
+          <h1 id="cityName">City Name</h1>
+          <h4 id="date">date</h4>
+          <h2 id="temperature">Temperature:</h2>
 
           <div class="info">
             <div class="tempDiv">
-              <h3>Low:</h3>
-              <h3>High:</h3>
+              <h3>Low: <span id="temp-low"></span></h3>
+              <h3>High: <span id="temp-high"></span></h3>
             </div>
-            <div class="iconDiv"><img src="" alt="weather in symbol" /></div>
+            <div class="iconDiv">
+              <img src="" alt="weather in symbol" id="icon" />
+            </div>
             <div class="miscDiv">
-              <h3>Humidity</h3>
-              <h3>Wind:</h3>
+              <h3>Humidity: <span id="humidity"></span></h3>
+              <h3>Wind: <span id="wind"></span></h3>
             </div>
           </div>
         </div>
         <div class="listOfStates">
           <h3>List of States</h3>
-          <div class="stateList"></div>
+          <div id="stateList"></div>
         </div>
       </div>
       <div class="footer">
         <div class="label"><h2>Five Days Forecast</h2></div>
-        <div class="fiveDaysKist"></div>
+        <div class="fiveDaysList"></div>
       </div>
     </div>
 
