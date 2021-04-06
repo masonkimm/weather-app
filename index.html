@@ -27,7 +27,48 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <h1>Hello world</h1>
+    <div class="container">
+      <div class="header">
+        <h1>Weather App</h1>
+      </div>
+
+      <div class="main">
+        <div class="searchBar">
+          <form action="" method="POST">
+            <label for="">Search USA: </label>
+            <input type="text" placeholder="City of State" />
+            <button><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+
+        <div class="currentWeather">
+          <h1>City Name</h1>
+          <h4>date</h4>
+          <h2>Temperature:</h2>
+
+          <div class="info">
+            <div class="tempDiv">
+              <h3>Low:</h3>
+              <h3>High:</h3>
+            </div>
+            <div class="iconDiv"><img src="" alt="weather in symbol" /></div>
+            <div class="miscDiv">
+              <h3>Humidity</h3>
+              <h3>Wind:</h3>
+            </div>
+          </div>
+        </div>
+        <div class="listOfStates">
+          <h3>List of States</h3>
+          <div class="stateList"></div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="label"><h2>Five Days Forecast</h2></div>
+        <div class="fiveDaysKist"></div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
