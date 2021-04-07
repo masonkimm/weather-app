@@ -87,6 +87,30 @@ const getCityInfo = (cityName) => {
       renderButtons();
       resetSearchBar();
       storeSearch();
+
+      // creating a nesting ajax to call upon independent UV API
+      var uvURL =
+        'https://api.openweathermap.org/data/2.5/uvi?appid=' +
+        APIkey +
+        '&lat=' +
+        response.coord.lat +
+        '&lon=' +
+        response.coord.lon;
+      $.ajax({
+        url: uvURL,
+        method: 'GET',
+      }).then(function (response) {
+        var uv = response.value;
+        $('#uv').text(uv);
+        // giving <uv span> color according to value number
+        if (response.value >= 10) {
+          $('#uv').css('background-color', 'red');
+        } else if (response.value < 10 && response.value > 6) {
+          $('#uv').css('background-color', 'yellow');
+        } else {
+          $('#uv').css('background-color', 'green');
+        }
+      });
     })
     .catch((error) => {
       if (error) {
