@@ -158,9 +158,22 @@
     border: 1px solid black;
     border-right: none;
   }
-  .searchBar form {
+
+  .searchBar > form {
+    display: flex;
+
+    align-items: center;
+    background-color: #eff2f5;
+    border-radius: 33px;
+    border: 1px solid black;
+    border-right: none;
     padding: 5px;
     margin-top: 20px;
+  }
+  .searchBar > form > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
   }
 
   #citySearchBar {
@@ -174,8 +187,7 @@
   }
   #submitBtn {
     padding: 5px;
-    width: 20%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     border: none;
   }
   #searchList {
