@@ -24,31 +24,41 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <!-- local style sheet -->
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="bg-img">
-        <img src="https://rb.gy/btd2zz" alt="" />
-      </div>
       <div class="header">
         <h1>Weather App</h1>
       </div>
 
       <div class="main">
         <div class="searchBar">
+          <div class="bg-img">
+            <img src="https://rb.gy/btd2zz" alt="" />
+          </div>
           <form action="" method="POST">
-            <!-- <label for="" id="searchBarLabel">Search USA: </label> -->
-            <button id="submitBtn"><i class="fa fa-search"></i></button>
-            <input type="text" placeholder="City or State" id="searchBar" />
+            <div class="inputArea">
+              <input type="text" placeholder="City or State" id="searchBar" />
+              <button id="submitBtn"><i class="fa fa-search"></i></button>
+            </div>
           </form>
           <div id="searchList"></div>
         </div>
 
         <div class="currentWeather">
-          <h1 id="cityName">City Name</h1>
-          <h4 id="date">Date</h4>
-          <h2 id="temperature">Temperature:</h2>
+          <div class="top">
+            <h1 id="cityName">
+              <!-- City Name -->
+            </h1>
+            <h4 id="date">
+              <!-- Date -->
+            </h4>
+            <h2 id="temperature">
+              <!-- Temperature: -->
+            </h2>
+          </div>
 
           <div class="info">
             <div class="tempDiv">

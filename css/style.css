@@ -4,298 +4,286 @@
   font-family: 'open-sans', sans-serif;
   font-weight: 100;
 }
-@media (max-width: 699px) {
-  .header {
-    text-align: center;
-    margin: 20px;
-  }
-  #searchList {
-    margin: 20px;
-    text-align: center;
-    height: 120px;
-    overflow: scroll;
-    background-color: rgba(161, 233, 255, 0.6);
-  }
-  .searchBar {
-    text-align: center;
-  }
-  .currentWeather {
-    margin-top: 40px;
-    text-align: center;
-  }
-  .currentWeather h2 {
-    margin-top: 20px;
-  }
-  .currentWeather h4 {
-    color: gray;
-    margin-top: 10px;
-  }
-  .currentWeather .info {
-    margin-top: 30px;
-    color: gray;
-  }
-  .listOfStates {
-    display: none;
-  }
-  .footer {
-    display: none;
-  }
+.container {
+  display: flex;
+
+  flex-direction: column;
+  margin: 1rem;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.main {
+  display: flex;
+
+  justify-content: space-around;
+  height: 60vh;
+  max-height: 60vh;
+  border: 1px solid black;
+}
+/* Search section */
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  border: 1px solid black;
+}
+.bg-img {
+  display: flex;
+  justify-content: center;
+}
+.bg-img img {
+  height: 255px;
+}
+.searchBar form {
+  padding: 1rem;
+  display: flex;
+
+  flex-direction: column;
+  /* border: 1px solid black; */
+  justify-content: space-between;
+}
+.searchBar input {
+  padding: 0.5rem;
+}
+.searchBar .inputArea {
+  display: flex;
+}
+.searchBar .inputArea button {
+  width: 20%;
+}
+.searchBar #searchList {
+  overflow-y: scroll;
+}
+.searchBar #searchList button {
+  background-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+}
+#searchResult {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 4px;
+  border: 1px solid rgb(73, 72, 72);
+  border-radius: 10px;
 }
 
-@media (min-width: 700px) {
-  html {
-    height: 100%;
-  }
-  body {
-    position: relative;
-    min-height: 100%;
-  }
+/* Main display section */
 
-  body:before {
-    background-color: rgb(239, 244, 245);
-    content: '';
-    background-image: url('https://rb.gy/xc5ttj');
-    width: 100%;
-    height: 100vh;
-    object-fit: contain;
-    background-size: cover;
-    background-position: top center;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    opacity: 0.9;
+.currentWeather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 2;
+  border: 1px solid black;
+}
+
+.currentWeather .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px solid black; */
+  max-height: auto;
+  width: auto;
+}
+.currentWeather .top h1 {
+  font-size: 90px;
+  margin-bottom: 2rem;
+  color: gray;
+}
+.currentWeather .top h2 {
+  font-size: 40px;
+  margin-top: 2rem;
+  color: gray;
+}
+
+.currentWeather .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  width: 500px;
+}
+.currentWeather .info .tempDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.currentWeather .info .miscDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+/* List of states section */
+.listOfStates {
+  display: flex;
+
+  flex-direction: column;
+  flex: 0.5;
+  border: 1px solid black;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.listOfStates h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem;
+}
+#stateList tr:nth-of-type(odd) {
+  background-color: #e7b593;
+}
+#stateList tr {
+  display: flex;
+  justify-content: space-between;
+}
+#stateList button {
+  display: flex;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#stateList tr:hover {
+  background-color: rgb(235, 189, 103);
+  color: white;
+  cursor: pointer;
+}
+#stateList button:hover {
+  color: white;
+}
+
+/* 5days forcast section */
+.footer {
+  display: flex;
+
+  flex-direction: column;
+  width: 100%;
+  height: 30vh;
+  border: 1px solid black;
+}
+.footer .label {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+.footer .fiveDaysList {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/* tablet size */
+@media (max-width: 600px) {
+  html,
+  body {
+    overflow-x: hidden;
   }
-  .bg-img {
-    position: fixed;
-    z-index: 0.5;
-    opacity: 0.9;
+  .main {
+    display: block;
+    max-height: auto;
+    border: none;
   }
   .bg-img img {
-    z-index: -1;
-    opacity: 0.9;
-    height: 200px;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 50%;
+    width: auto;
   }
-
-  .container {
-    margin: 0 10px;
-    padding-top: 30px;
-    position: relative;
-  }
-
-  .header {
-    display: flex;
-    justify-content: center;
-    color: white;
-    margin-top: -10px;
-    margin-bottom: 10px;
-  }
-
-  .main {
-    height: 60vh;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* list of states */
-  .listOfStates {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    flex: 1;
-    /* border: 1px solid black; */
-    opacity: 0.7;
-  }
-  .listOfStates h3 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 10px;
-  }
-  #stateList {
-    width: 80%;
-    margin-top: 20px;
-    overflow: scroll;
-    background-color: rgba(255, 251, 251, 0.6);
-  }
-  #stateList tr:nth-of-type(odd) {
-    background-color: #e7b593;
-  }
-  #stateList tr {
-    display: flex;
-    justify-content: space-between;
-  }
-  #stateList button {
-    display: flex;
-    padding: 10px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-  #stateList tr:hover {
-    background-color: rgb(235, 189, 103);
-    color: white;
-    cursor: pointer;
-  }
-  #stateList button:hover {
-    color: white;
-  }
-
-  /* five days area */
-  .footer h2 {
-    margin: 10px;
-    padding: 10px;
-  }
-  .fiveDaysList {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    text-align: center;
-    justify-content: space-around;
-  }
-  .fiveDaysList h4 {
-    color: white;
-  }
-  .days {
-    height: auto;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    border: 1px solid white;
-    border-radius: 10px;
-  }
-  .fiveDaysList img {
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
-  }
-  .fiveDaysListLabel {
-    margin: 10px;
-  }
-
-  /* searchBar area */
   .searchBar {
-    display: flex;
-    flex: 0.75;
-    flex-direction: column;
-    /* border: 1px solid black; */
-    border-right: none;
-    margin-top: 13rem;
+    max-width: auto;
+    height: 500px;
   }
-
-  .searchBar > form {
+  .searchBar form {
     display: flex;
-    width: 88%;
     align-items: center;
-    background-color: transparent;
-    border-radius: 10px;
-    border: 1px solid white;
-    padding: 5px;
-    margin-top: 20px;
-    margin-left: 10px;
   }
-  .searchBar > form > input {
-    border: none;
-    background-color: transparent;
-    outline-width: 0;
+  .searchBar #searchList {
+    overflow-y: scroll;
   }
-
-  #searchBar {
-    padding: 5px;
-    width: 50%;
-  }
-  #label {
-    color: white;
-  }
-  #submitBtn {
-    padding: 5px;
-    background-color: transparent;
-
-    border: none;
-  }
-  #searchList {
-    margin-top: 5px;
-    overflow: scroll;
-    border-right: none;
-  }
-  #searchList button {
-    border: none;
-    background-color: transparent;
-    padding: 4px;
-    cursor: pointer;
-  }
-  #searchList button:hover {
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  #searchList #cityBtn {
-    width: 80%;
-  }
-  #searchList #removeBtn:hover {
-    background-color: rgb(221, 150, 150);
-  }
-  #searchResult {
-    margin: 10px;
-    padding: 4px;
-    border: 1px solid rgb(241, 241, 241);
-    border-radius: 10px;
-  }
-  .city {
-    list-style: none;
-  }
-
-  /* main display area */
   .currentWeather {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    flex: 3;
-    /* border: 1px solid black; */
-    /* text-align: center; */
-    border-left: none;
+    display: block;
+    max-height: auto;
   }
-  .currentWeather h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    text-align: center;
+  .currentWeather .top {
+    height: 500px;
   }
-  .currentWeather h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: pulse 1.5s infinite;
-  }
-  .currentWeather h3 {
-    margin-top: 1rem;
-    color: white;
-    text-align: center;
-  }
-  .currentWeather #uv {
-    color: black;
-  }
-  .currentWeather h4 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: white;
-  }
-  .currentWeather .info {
-    display: inline-flex;
-    justify-content: space-around;
-  }
-  #icon {
-    height: 100px;
-    width: 100px;
+
+  .footer {
+    display: block;
+    visibility: hidden;
   }
 }
-
-/* @media (max-width: 375px) {
-  .listOfStates {
-    display: hide;
+/* mobile phone size */
+@media (max-width: 375px) {
+  html,
+  body {
+    overflow-x: hidden;
   }
-} */
+  .container {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .main {
+    display: block;
+    max-height: auto;
+    border: none;
+    width: 375px;
+  }
+  .bg-img img {
+    width: auto;
+  }
+  .searchBar {
+    display: flex;
+    width: 100%;
+  }
+  .searchBar form {
+    display: flex;
+    align-items: center;
+  }
+  .searchBar #searchList {
+    overflow-y: scroll;
+  }
+  .searchBar #searchList button {
+    width: 100%;
+    padding: 0;
+  }
+  #searchResult {
+    display: flex;
+    border: 1px solid rgb(73, 72, 72);
+    border-radius: 10px;
+  }
+  .currentWeather {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: auto;
+  }
+  .currentWeather .top h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .currentWeather .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer {
+    display: block;
+    visibility: hidden;
+  }
+}
