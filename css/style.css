@@ -188,17 +188,27 @@
   body {
     overflow-x: hidden;
   }
+  .container {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
   .main {
     display: block;
     max-height: auto;
     border: none;
+    width: 375px;
   }
+
   .bg-img img {
     width: auto;
   }
   .searchBar {
-    max-width: auto;
-    height: 500px;
+    display: flex;
+    width: 100%;
   }
   .searchBar form {
     display: flex;
@@ -207,21 +217,37 @@
   .searchBar #searchList {
     overflow-y: scroll;
   }
-  .currentWeather {
-    display: block;
-    max-height: auto;
-  }
-  .currentWeather .top {
-    height: 500px;
+
+  .searchBar #searchList button {
+    width: 100%;
+    padding: 0;
   }
 
+  .currentWeather {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: auto;
+  }
+  .currentWeather .top h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .currentWeather .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .footer {
     display: block;
     visibility: hidden;
   }
 }
 /* mobile phone size */
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   html,
   body {
     overflow-x: hidden;
@@ -286,4 +312,4 @@
     display: block;
     visibility: hidden;
   }
-}
+} */
