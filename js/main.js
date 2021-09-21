@@ -14,10 +14,10 @@ let searchList = $('#searchList');
 let searchBar = $('#searchBar');
 
 let newDate = new Date();
-let dd = newDate.getDate();
-let mm = newDate.getMonth() + 1;
-let yyyy = newDate.getFullYear();
-let date = `${yyyy}.${mm}.${dd}`;
+// let dd = newDate.getDate();
+// let mm = newDate.getMonth() + 1;
+// let yyyy = newDate.getFullYear();
+// let date = `${yyyy}.${mm}.${dd}`;
 
 $.getJSON('./usStates.json', (json) => {
   json.forEach((state) => {
@@ -70,7 +70,7 @@ const getCityInfo = (cityName) => {
 
       //setting response to corresponding html tags
       $('#cityName').text(`${cityName}, ${country}`);
-      $('#date').text(`${date}`);
+      $('#date').text(`${newDate.toDateString()}`);
       $('#temperature').text(`${tempF} °F`);
       $('#temp-high').text(`${tempHigh} °F`);
       $('#temp-low').text(`${tempLow} °F`);
