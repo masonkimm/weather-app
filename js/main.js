@@ -146,7 +146,7 @@ function renderFiveDays(fiveDays) {
     let date = $('<h3>');
     date.text(day.dt_txt.split(' ')[0]);
 
-    let humidity = $('<p>');
+    let humidity = $('<p id=humidity>');
     humidity.text(`Humidity: ${day.main.humidity}`);
 
     let tempLow = $('<p>');
