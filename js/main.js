@@ -2,10 +2,6 @@ if (jQuery) {
   console.log('jQuery');
 }
 
-if (jQuery) {
-  console.log('jQuery');
-}
-
 // variable declation
 let allCities = [];
 let removeBtn = $('#removeBtn');
@@ -26,14 +22,13 @@ $.getJSON('./usStates.json', (json) => {
     <td ><button id='state'>${state.name}</button></td>
     </tr>
     `;
-    // console.log(display);
     $('#stateList').append(display);
   });
 });
 
 $('#stateList').on('click', '#state', function () {
   let thisState = $(this).text();
-  console.log(thisState);
+
   getCityInfo(thisState);
 });
 
@@ -51,7 +46,6 @@ const getCityInfo = (cityName) => {
     method: 'GET',
   })
     .then((response) => {
-      console.log(response);
       let cityName = response.name;
       let country = response.sys.country;
       let tempK = response.main.temp;
@@ -139,36 +133,35 @@ function renderFiveDays(fiveDays) {
   let fiveDayArr = getForecastForEachDay(fiveDays.list);
   $('.fiveDaysList').text(' ');
   fiveDayArr.forEach((day, index) => {
-    // console.log(day);
-    let divTag = $('<div>');
+    let divTag = $('<div >');
     divTag.attr('class', 'days');
 
-    let temp = $('<h3>');
+    let temp = $('<h4>');
     temp.attr('class', '');
     let tempK = day.main.temp;
-    console.log(tempK);
+
     let tempF = ((parseFloat(tempK) - 273.15) * 1.8 + 32).toFixed(2);
     temp.text(` ${tempF} °F`);
 
-    let date = $('<h2>');
+    let date = $('<h3>');
     date.text(day.dt_txt.split(' ')[0]);
 
-    let humidity = $('<h4>');
+    let humidity = $('<p>');
     humidity.text(`Humidity: ${day.main.humidity}`);
 
-    let tempLow = $('<h4>');
+    let tempLow = $('<p>');
     let tempLowF = (
       (parseFloat(day.main.temp_min) - 273.15) * 1.8 +
       32
     ).toFixed(2);
-    tempLow.text(`Low: ${tempLowF}`);
+    tempLow.text(`Low: ${tempLowF} °F`);
 
-    let tempHigh = $('<h4>');
+    let tempHigh = $('<p>');
     let tempHighF = (
       (parseFloat(day.main.temp_max) - 273.15) * 1.8 +
       32
     ).toFixed(2);
-    tempHigh.text(`High: ${tempHighF}`);
+    tempHigh.text(`High: ${tempHighF} °F`);
 
     let icon = $('<img>');
     icon.attr(

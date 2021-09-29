@@ -7,8 +7,15 @@
     <link rel="icon" href="./favicon.ico" />
 
     <title>The Weather-App</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-    <!-- bootstrap, jquery, fontawesome, animate.css CDNs -->
+    <!-- jquery, fontawesome, animate.css CDNs -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -32,21 +39,20 @@
   </head>
   <body>
     <div class="app">
-      <div class="container">
+      <div class="container-fluid">
         <div class="header">
           <h1>Weather App</h1>
         </div>
 
-        <div class="main">
+        <div class="body">
           <!-- left -->
           <div class="searchArea">
-            <div class="searchArea__img">
-              <img src="https://bit.ly/3zt7Qqu" alt="" />
-            </div>
-
             <form action="" method="POST">
-              <input type="text" placeholder="City or State" id="searchBar" />
-              <button id="submitBtn"><i class="fa fa-search"></i></button>
+              <label for="searchBar">Search Anywhere in US</label>
+              <div class="searchArea__bottom">
+                <input type="text" placeholder="City or State" id="searchBar" />
+                <button id="submitBtn"><i class="fa fa-search"></i></button>
+              </div>
             </form>
 
             <div id="searchList"></div>

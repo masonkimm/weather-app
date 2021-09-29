@@ -5,19 +5,18 @@
 }
 
 .app {
-  min-height: 100vh;
+  /* height: fit-content; */
   width: 100%;
-  position: relative;
+  /* position: relative; */
   background-image: url('https://bit.ly/3CuKlPZ');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  /* background: rgba(0, 0, 0, 0.25); */
+  /* min-height: 100vh; */
+  display: flex;
 }
-.container {
-  position: absolute;
-  min-height: 100%;
-  max-height: fit-content;
-  width: 100%;
+.container-fluid {
   background: rgba(0, 0, 0, 0.25);
   color: white;
   display: flex;
@@ -26,48 +25,38 @@
 .header {
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
+  min-height: 10vh;
 }
-.main {
+.body {
   display: flex;
-  justify-content: space-around;
-  height: 60vh;
-  min-height: fit-content;
-  max-height: 60vh;
-  /* border: 1px solid black; */
   border-bottom: 1px solid white;
-  padding: 1rem;
+  /* height: 25%; */
+  height: 80vh;
 }
-/* Search section */
+/* Left */
 .searchArea {
   display: flex;
   flex-direction: column;
-  flex: 0.5;
-  /* border: 1px solid black; */
+  flex: 1;
+  border: 1px solid white;
+  height: 100%;
+
+  border-radius: 17px;
 }
-.searchArea__img {
+.searchArea__bottom {
   display: flex;
-  justify-content: center;
-}
-.searchArea__img img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-top: 1rem;
 }
 .searchArea form {
   padding: 1rem;
-  display: flex;
+  border-bottom: 1px solid white;
 }
 .searchArea #searchBar {
   padding: 0.5rem;
-  width: 100%;
-
+  width: 80%;
   border: 1px solid white;
   border-radius: 17px;
 }
-
 .searchArea #submitBtn {
   width: 20%;
   border-radius: 10px;
@@ -88,7 +77,6 @@
   border: none;
   color: white;
 }
-
 #searchResult {
   display: flex;
   justify-content: space-between;
@@ -102,24 +90,25 @@
   background-color: skyblue;
 }
 
-/* Main display section */
+/* Center */
 .currentWeather {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  flex: 2;
-
-  /* border: 1px solid black; */
+  flex: 3;
+  height: 100%;
+  object-fit: contain;
+  overflow: scroll;
 }
-
+.currentWeather::-webkit-scrollbar {
+  display: none;
+}
 .currentWeather__top {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   min-height: fit-content;
-  /* border: 1px solid black; */
 }
 .currentWeather__top #cityName {
   font-size: 5rem;
@@ -130,27 +119,26 @@
 .currentWeather__top #temperature {
   font-size: 4rem;
   margin-top: 2rem;
-  /* color: gray; */
 }
 .currentWeather .weatherSymbol {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 }
 .currentWeather__info {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 200px;
-  width: 80%;
-  /* border: 1px solid black; */
+  /* height: 5rem; */
+  /* object-fit: contain; */
+  width: 100%;
 }
 .currentWeather__info .info__box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 100%;
+  /* max-height: 100%; */
   border-right: 1px solid white;
-  width: 20%;
+  min-width: 20%;
 }
 .currentWeather__info .info__box:first-child {
   border-left: 1px solid white;
@@ -168,13 +156,13 @@
 /* List of states section */
 .listOfStates {
   display: flex;
-
   flex-direction: column;
-  flex: 0.5;
+  flex: 1;
   border: 1px solid white;
   border-radius: 17px;
   overflow-y: scroll;
   width: 100%;
+  height: 100%;
 }
 
 #listOfStates__title {
@@ -212,11 +200,8 @@
 /* 5days forcast section */
 .footer {
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
   width: 100%;
-  height: 30vh;
-  /* border: 1px solid black; */
 }
 .footer #footer__label {
   text-align: center;
@@ -228,18 +213,16 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+}
+.fiveDaysList .days {
+  text-align: center;
+  margin: 0;
+}
+.fiveDaysList .days > p {
+  margin: 0;
 }
 
-/* @media (max-width: 1000px) and (min-width: 601px) {
-  .currentWeather__top #cityName {
-    color: red;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: white;
-    font-family: 'Lora', serif;
-  }
-} */
 @media (max-width: 1000px) {
   .currentWeather__top #cityName {
     font-size: 3rem;
