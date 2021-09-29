@@ -176,7 +176,6 @@ function renderFiveDays(fiveDays) {
     divTag.append(tempLow);
     divTag.append(tempHigh);
     divTag.append(humidity);
-    // divTag.append(icon);
 
     $('.fiveDaysList').append(divTag);
   });

@@ -41,7 +41,6 @@
   flex: 1;
   border: 1px solid white;
   height: 100%;
-
   border-radius: 17px;
 }
 .searchArea__bottom {
@@ -120,15 +119,11 @@
   font-size: 4rem;
   margin-top: 2rem;
 }
-.currentWeather .weatherSymbol {
-  /* margin-top: 4rem; */
-}
+
 .currentWeather__info {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* height: 5rem; */
-  /* object-fit: contain; */
   width: 100%;
 }
 .currentWeather__info .info__box {
@@ -136,7 +131,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* max-height: 100%; */
+
   border-right: 1px solid white;
   min-width: 20%;
 }
@@ -213,7 +208,6 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  /* margin-top: 1rem; */
 }
 .fiveDaysList .days {
   text-align: center;
@@ -239,56 +233,52 @@
 
 /* tablet size */
 @media (max-width: 768px) {
-  html,
-  body {
-    overflow-x: hidden;
+  .body {
+    /* overflow-x: hidden; */
+    /* margin-bottom: 2rem; */
+    padding-bottom: 2rem;
+    height: 100vh;
   }
   .app {
-    background-image: none;
-    background-color: white;
+    overflow: hidden;
+    /* min-height: 100vh; */
+    /* background-image: none; */
+    /* background-color: white; */
   }
-  .container {
+  .container-fluid {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    background-color: white;
   }
   .header {
-    color: black;
+    color: white;
   }
-  .main {
+  .body {
     display: block;
-    max-height: auto;
-    border: none;
-    width: 375px;
+    /* max-height: auto; */
+    /* width: 375px; */
   }
 
   .searchArea {
     display: flex;
     width: 100%;
     color: black;
-  }
-  .searchArea__img {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  .searchArea__img img {
-    width: 60%;
-  }
-  .searchArea form {
-    display: flex;
-    align-items: center;
-    color: black;
-    border: 1px solid black;
+    height: 40%;
   }
 
+  .searchArea form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+  }
+  .searchArea__bottom {
+    display: flex;
+  }
   .searchArea #searchBar {
     padding: 0.5rem;
     width: 100%;
-    border: 1px solid gray;
     border-radius: 17px;
   }
   .searchArea #submitBtn {
@@ -296,17 +286,13 @@
     border-radius: 10px;
     background-color: transparent;
     color: black;
-    border: 1px solid gray;
   }
   .searchArea #searchList {
     overflow-y: scroll;
   }
-
   .searchArea #searchList button {
     width: 100%;
     padding: 0;
-    color: black;
-    border: 1px solid gray;
   }
 
   .currentWeather {
@@ -315,18 +301,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: auto;
-    color: black;
+  }
+  .currentWeather__top {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
   .currentWeather__top #cityName {
     font-size: 3rem;
     text-align: center;
-    color: black;
   }
   .currentWeather__top #temperature {
     font-size: 3rem;
     margin-top: 2rem;
-    /* color: gray; */
   }
 
   .currentWeather__info {
@@ -335,8 +321,8 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    /* margin-bottom: 2rem;
+    padding-bottom: 2rem; */
   }
   .currentWeather__info .info__box {
     display: flex;
@@ -351,9 +337,34 @@
     font-size: 0.9rem;
     margin: 1rem;
   }
+  .listOfStates {
+    visibility: hidden;
+  }
 
   .footer {
+    padding-top: 5rem;
     display: block;
+    flex-wrap: wrap;
+
+    /* visibility: hidden; */
+  }
+  #footer__label {
+    visibility: hidden;
+  }
+  .fiveDaysList .days {
+    min-width: 20%;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    height: 150px;
+  }
+  .fiveDaysList .days > h3,
+  .fiveDaysList .days > h4 {
+    font-size: 1rem;
+  }
+  .fiveDaysList .days > p {
     visibility: hidden;
   }
 }
