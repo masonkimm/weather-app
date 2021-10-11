@@ -7,13 +7,12 @@
 .app {
   /* height: fit-content; */
   width: 100%;
-  /* position: relative; */
+
   background-image: url('https://bit.ly/3CuKlPZ');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* background: rgba(0, 0, 0, 0.25); */
-  /* min-height: 100vh; */
+
   display: flex;
 }
 .container-fluid {
@@ -31,7 +30,6 @@
 .body {
   display: flex;
   border-bottom: 1px solid white;
-  /* height: 25%; */
   height: 80vh;
 }
 /* Left */
@@ -138,6 +136,9 @@
 .currentWeather__info .info__box:first-child {
   border-left: 1px solid white;
 }
+.currentWeather__info .info__box:last-child {
+  border-right: none;
+}
 .currentWeather__info .info__box h3,
 .currentWeather__info .info__box h4 {
   font-size: 1.5rem;
@@ -179,6 +180,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
 }
 #stateList tr:hover {
   background-color: rgb(235, 189, 103);
@@ -234,16 +236,11 @@
 /* tablet size */
 @media (max-width: 768px) {
   .body {
-    /* overflow-x: hidden; */
-    /* margin-bottom: 2rem; */
     padding-bottom: 2rem;
     height: 100vh;
   }
   .app {
     overflow: hidden;
-    /* min-height: 100vh; */
-    /* background-image: none; */
-    /* background-color: white; */
   }
   .container-fluid {
     display: flex;
@@ -345,7 +342,6 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid white; */
     height: 30%;
   }
   .fiveDaysList .days > h3,
@@ -359,103 +355,3 @@
     visibility: hidden;
   }
 }
-
-/* @media (max-width: 768px) {
-  html,
-  body {
-    overflow-x: hidden;
-
-    background-color: white;
-    color: black;
-  }
-  .app {
-    background-image: none;
-    background-color: white;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: max-content;
-    color: black;
-    margin: 0;
-    border: 1px solid black;
-  }
-  .container {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 1rem;
-    background: white;
-    max-height: auto;
-  }
-
-  .header {
-    color: black;
-  }
-  .main {
-    display: block;
-    max-height: auto;
-    border: none;
-    background-color: white;
-  }
-  .searchArea {
-    display: flex;
-    justify-content: center;
-    color: black;
-    border: 1px solid black;
-  }
-  .searchArea #searchList {
-    color: black;
-  }
-
-  .searchArea__img img {
-    width: 60%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .searchArea {
-    display: block;
-    width: 100%;
-  }
-  .searchArea #searchBar {
-    display: flex;
-    align-items: center;
-    border: 1px solid black;
-    color: black;
-  }
-  .searchArea #searchList {
-    overflow-y: scroll;
-  }
-
-  .searchArea #searchList button {
-    width: 100%;
-    padding: 0;
-    border: 1px solid black;
-    color: black;
-  }
-  .currentWeather {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-height: auto;
-  }
-  .currentWeather__top #cityName {
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  .currentWeather__info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .footer {
-    display: none;
-  }
-  .listOfStates {
-    display: none;
-  }
-} */
